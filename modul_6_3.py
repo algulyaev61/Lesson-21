@@ -11,13 +11,12 @@ class Animal:
         self._cords = [0, 0, 0]
 
     def move(self, dx, dy, dz):
-        self.dx = dx * self.speed
-        self.dy = dy * self.speed
-        self.dz = dz * self.speed
-        if self.dz < 0:
-            self.dx = dx
-            self.dy = dy 
+        if dz * self.speed < 0:
             print("It's too deep, i can't dive :(")
+        else:
+            self.x = dx * self.speed
+            self.y = dy * self.speed
+            self.z = dz * self.speed
 
     def get_cords(self):
         print(f'X: {self.dx}, Y: {self.dy}, Z: {self.dz}')
@@ -40,7 +39,7 @@ class AquaticAnimal(Animal):
     _DEGREE_OF_DANGER = 3
 
     def dive_in(self, dz):
-        self.dz = abs(self.dz - dz * (self.speed / 2))
+        self.z = abs(self.z - dz * (self.speed / 2))
 
 
 class PoisonousAnimal(Animal):
