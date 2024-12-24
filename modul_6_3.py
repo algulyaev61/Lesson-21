@@ -19,7 +19,7 @@ class Animal:
             self.z = dz * self.speed
 
     def get_cords(self):
-        print(f'X: {self.dx}, Y: {self.dy}, Z: {self.dz}')
+        print(f'X: {self.x}, Y: {self.y}, Z: {self.z}')
 
     def attack(self):
         if self._DEGREE_OF_DANGER < 5:
