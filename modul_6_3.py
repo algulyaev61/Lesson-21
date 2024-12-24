@@ -15,6 +15,8 @@ class Animal:
         self.dy = dy * self.speed
         self.dz = dz * self.speed
         if self.dz < 0:
+            self.dx = dx
+            self.dy = dy 
             print("It's too deep, i can't dive :(")
 
     def get_cords(self):
